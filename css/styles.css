@@ -1,0 +1,510 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,800);
+
+body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#mainMenuBanner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+#mainMenu-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+figure.mainMenu {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    max-height: 220px;
+    width: 100%;
+    background: darkred;
+    color: #ffffff;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+
+figure.mainMenu * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+figure.mainMenu img {
+    max-width: 100%;
+    position: relative;
+    opacity: 0.4;
+}
+
+figure.mainMenu figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+figure.mainMenu h2 {
+    position: absolute;
+    left: 40px;
+    right: 40px;
+    display: inline-block;
+    background: darkred;
+    transform: skew(-10deg) rotate(-10deg) translate(0, -50%);
+    padding: 12px 5px;
+    margin: 0;
+    top: 50%;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: white;
+}
+
+figure.mainMenu h2 span {
+    font-weight: 800;
+    color: white;
+}
+
+figure.mainMenu:before {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    content: '';
+    background: white;
+    position: absolute;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    transform: rotate(110deg) translateY(-50%);
+}
+
+figure.mainMenu a {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+
+figure.mainMenu.main {
+    background: darkblue;
+}
+
+figure.mainMenu.main h2 {
+    background: darkblue;
+}
+
+
+
+figure.mainMenu:hover img,
+figure.mainMenu.hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+figure.mainMenu:hover h2,
+figure.mainMenu.hover h2 {
+    transform: skew(-10deg) rotate(-10deg) translate(-150%, -50%);
+}
+
+figure.mainMenu:hover:before,
+figure.snip1104.hover:before {
+    transform: rotate(110deg) translateY(-150%);
+}
+
+.music-container {
+    background-color: black;
+    border-radius: 15px;
+    display: flex;
+    padding: 10px 30px;
+    position: relative;
+    margin: 100px 0;
+    z-index: 10;
+    width: 350px;
+}
+
+.img-container {
+    position: relative;
+    width: 110px;
+}
+
+.img-container::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, 50%);
+}
+
+.img-container img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 110px;
+    width: inherit;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: rotate 3s linear infinite;
+
+    animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+    animation-play-state: running;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.action-btn {
+    background-color: black;
+    border: 0;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 20px;
+}
+
+.action-btn.action-btn-big {
+    color: white;
+    font-size: 30px;
+}
+
+.action-btn:focus {
+    outline: 0;
+}
+
+.music-info {
+    background-color: black;
+    border-radius: 15px 15px 0 0;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    padding: 10px 10px 10px 150px;
+    opacity: 0;
+    transform: translateY(0%);
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+    z-index: 0;
+    color: white;
+    font-family: 'Raleway', Arial, sans-serif;
+}
+
+.music-container.play .music-info {
+    opacity: 1;
+    transform: translateY(-100%);
+}
+
+.music-info h4 {
+    margin: 0;
+}
+
+.progress-container {
+    background: #BDB9C0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
+    width: 100%;
+}
+
+.progress {
+    background-color: white;
+    border-radius: 5px;
+    height: 100%;
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+#navigation {
+    height: 40px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#navigation a {
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10px;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    color: #BDB9C0;
+}
+
+.gameModeTitle {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 28px;
+}
+
+#form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', Arial, sans-serif;
+    width: 100%;
+}
+
+#form-wrapper input[type=text] {
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    border: 3px solid black;
+    transition: 0.5s;
+    outline: none;
+    caret-color: darkred;
+}
+
+#form-wrapper input[type=text]:focus {
+    border: 3px solid darkred;
+}
+
+input[type=checkbox] {
+    display:none;
+}
+
+input[type=checkbox] + label {
+    margin-right: 20px;
+}
+
+input#character1[type=checkbox] + label
+{
+    background-image: url("../imgs/character1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: white;
+    border-style: solid;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    padding: 0 0 0 0;
+}
+
+input#character2[type=checkbox] + label
+{
+    background-image: url("../imgs/character2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: white;
+    border-style: solid;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    padding: 0 0 0 0;
+}
+
+input#character3[type=checkbox] + label
+{
+    background-image: url("../imgs/character3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: white;
+    border-style: solid;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    padding: 0 0 0 0;
+}
+
+input#character1[type=checkbox] + label:hover {
+    cursor: pointer;
+    border-color: darkred;
+    transition: 0.5s;
+}
+
+input#character2[type=checkbox] + label:hover {
+    cursor: pointer;
+    border-color: darkred;
+    transition: 0.5s;
+}
+
+input#character3[type=checkbox] + label:hover {
+    cursor: pointer;
+    border-color: darkred;
+    transition: 0.5s;
+}
+
+input#character1[type=checkbox]:checked + label
+{
+    border-color: darkred;
+    border-style: solid;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    padding: 0 0 0 0;
+}
+input#character2[type=checkbox]:checked + label
+{
+    border-color: darkred;
+    border-style: solid;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    padding: 0 0 0 0;
+}
+input#character3[type=checkbox]:checked + label
+{
+    border-color: darkred;
+    border-style: solid;
+    height: 200px;
+    width: 200px;
+    display:inline-block;
+    padding: 0 0 0 0;
+}
+
+#form-wrapper input[type=submit] {
+    width: 220px;
+    height: 60px;
+    background-color: darkred;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+#form-wrapper input[type=submit]:hover {
+    background-color: red;
+}
+
+
+#form-wrapper input[type=submit]:disabled {
+    color: white;
+    background-color: #BDB9C0;
+    cursor: default;
+}
+
+#fight-body {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: center;
+    height: 100%;
+    width: 100%;
+}
+
+#fight-area-wrapper {
+    display: inline-flex;
+    margin-top: 270px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    margin-bottom: 80px;
+    font-family: 'Raleway', Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+}
+
+#fight-player-box {
+    text-align: center;
+    width: 33.33%;
+    font-size: 20px;
+}
+
+#fight-player-box img {
+    transform: scaleX(-1);
+}
+
+#fight-dialog-box {
+    width: 33.33%;
+    text-align: center;
+}
+
+#fight-dialog {
+    font-size: 13px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    height: 0;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#fight-dialog::-webkit-scrollbar {
+    display: none;
+}
+
+#fight-dialog div{
+    opacity: 0;
+}
+
+#fight-dialog-box button {
+    width: 180px;
+    height: 60px;
+    background-color: Black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+}
+
+#fight-dialog-box button:hover {
+    background-color: darkred;
+    cursor: pointer;
+}
+
+
+
+#fight-opponent-box {
+    width: 33.33%;
+    text-align: center;
+    color: darkred;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
